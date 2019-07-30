@@ -1,6 +1,6 @@
-{% set version = "2.0.0rc" %}
+{% set version = "2.0.0" %}
 {% set build_num = "0" %}
-{% set sha256 = "8dc97c93e48f57febc67773107276dbbdadb8c8effa75bea18a475c07266442a" %}
+{% set sha256 = "24bc04ae206c2e027457a7a19686fcf443b3d072d84abdc9cca8c26cd3cdbf10" %}
 
 package:
   name: gpi_core
@@ -14,7 +14,7 @@ source:
 build:
   number: {{ build_num }}
   detect_binary_files_with_prefix: True
-  skip: true  # [win,py2k]
+  skip: true  # [win or py2k]
 
 requirements:
   build:

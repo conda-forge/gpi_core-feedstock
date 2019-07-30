@@ -14,7 +14,7 @@ source:
 build:
   number: {{ build_num }}
   detect_binary_files_with_prefix: True
-  skip: true  # [win,py2k]
+  skip: true  # [win or py2k]
 
 requirements:
   build:

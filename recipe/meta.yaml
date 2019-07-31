@@ -1,5 +1,5 @@
 {% set version = "2.0.0" %}
-{% set build_num = "0" %}
+{% set build_num = "1" %}
 {% set sha256 = "24bc04ae206c2e027457a7a19686fcf443b3d072d84abdc9cca8c26cd3cdbf10" %}
 
 package:
@@ -23,7 +23,7 @@ requirements:
   host:
     - cytoolz
     - gpi >=1.1.4
-    - numpy >=1.11
+    - numpy =1.11
     - python
   run:
     - {{ pin_compatible('gpi') }}

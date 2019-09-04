@@ -1,6 +1,6 @@
-{% set version = "2.0.1" %}
+{% set version = "2.0.2" %}
 {% set build_num = "0" %}
-{% set sha256 = "3a5490b36d546ccccdf969d98bfdd695cad9e03e4273aa4405520409aabd97ec" %}
+{% set sha256 = "afb472f0b032a5e503c07fcb0b276a9c664885ad428185de70619cc607dbd735" %}
 
 package:
   name: gpi_core

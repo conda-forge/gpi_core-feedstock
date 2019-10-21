@@ -1,6 +1,6 @@
-{% set version = "2.0.0" %}
-{% set build_num = "1" %}
-{% set sha256 = "24bc04ae206c2e027457a7a19686fcf443b3d072d84abdc9cca8c26cd3cdbf10" %}
+{% set version = "2.0.2" %}
+{% set build_num = "0" %}
+{% set sha256 = "afb472f0b032a5e503c07fcb0b276a9c664885ad428185de70619cc607dbd735" %}
 
 package:
   name: gpi_core
@@ -22,7 +22,7 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - cytoolz
-    - gpi >=1.1.4
+    - gpi >=1.1.5
     - numpy =1.11
     - python
   run:

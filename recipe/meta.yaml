@@ -33,8 +33,6 @@ requirements:
     - scipy
 
 test:
-  requires:
-    - qt =5.6.*
   imports:
     - gpi
     - gpi_core

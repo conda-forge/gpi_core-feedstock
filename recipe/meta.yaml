@@ -20,7 +20,7 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - cytoolz
-    - gpi >=1.1.5
+    - gpi >=1.1.6
     - numpy =1.14
     - python
   run:

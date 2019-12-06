@@ -1,6 +1,4 @@
 {% set version = "2.0.2" %}
-{% set build_num = "0" %}
-{% set sha256 = "afb472f0b032a5e503c07fcb0b276a9c664885ad428185de70619cc607dbd735" %}
 
 package:
   name: gpi_core
@@ -8,11 +6,11 @@ package:
 
 source:
   url: https://github.com/gpilab/core-nodes/archive/v{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: afb472f0b032a5e503c07fcb0b276a9c664885ad428185de70619cc607dbd735
   folder: repo_contents
 
 build:
-  number: {{ build_num }}
+  number: 1
   detect_binary_files_with_prefix: True
   skip: true  # [win or py2k]
 
@@ -22,8 +20,8 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - cytoolz
-    - gpi >=1.1.5
-    - numpy =1.11
+    - gpi >=1.1.6
+    - numpy =1.14
     - python
   run:
     - {{ pin_compatible('gpi') }}

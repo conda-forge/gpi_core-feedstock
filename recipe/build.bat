@@ -20,6 +20,13 @@ robocopy COPYING.LESSER %SP_DIR%\%PKG_NAME%
 robocopy LICENSE %SP_DIR%\%PKG_NAME%
 robocopy README.md %SP_DIR%\%PKG_NAME%
 
+# Delete files that won't work for windows installations (C-based nodes)
+del /s %SP_DIR%\%PKG_NAME%\Gridding
+del /s %SP_DIR%\%PKG_NAME%\Spiral
+del /q %SP_DIR%\%PKG_NAME%\Math\fft_PyMOD.cpp
+del /q %SP_DIR%\%PKG_NAME%\Math\GPI\FFTW_GPI.py
+del /q %SP_DIR%\%PKG_NAME%\Math\GPI\Interpolate_GPI.py
+
 # Do the build in place in site-packages
 :: cd $SP_DIR/$PKG_NAME
 :: No gpi_make on windows at this time.

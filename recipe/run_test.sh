@@ -11,9 +11,10 @@ if [ "$(uname)" == "Darwin" ]; then
 fi
 
 if [ "$(uname)" == "Linux" ]; then
-    echo "Linux Test not currently available."
-#    export DISPLAY=localhost:1.0
-#    OUTPUT_1=`Display=localhost:1.0 xvfb-run -a bash -c "gpi --nogui repo_contents/testNets/TestNetwork_NoMatplotlib.net"`
-#    OUTPUT=`echo $OUTPUT_1 | grep "gpi.canvasGraph:384"`
-#    echo "Ran Linux Test"
+#    echo "Linux Test not currently available."
+    export DISPLAY=localhost:1.0
+    OUTPUT_1=`Display=localhost:1.0 xvfb-run -a bash -c "gpi --nogui repo_contents/testNets/TestNetwork_NoMatplotlib.net"`
+    OUTPUT=`echo $OUTPUT_1 | grep "gpi.canvasGraph:384"`
+    echo $OUTPUT_1
+    echo "Ran Linux Test Without Errors - at this time, success of the network execution is not being checked."
 fi

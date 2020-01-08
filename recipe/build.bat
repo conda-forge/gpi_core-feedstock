@@ -1,18 +1,18 @@
-::@echo off
+@echo off
 
 set UNPACK_DIR=repo_contents
 
-# Move files to root dir to avoid a License file error 
+:: Move files to root dir to avoid a License file error 
 robocopy /mov %UNPACK_DIR%\AUTHORS .\
 robocopy /mov %UNPACK_DIR%\COPYING .\
 robocopy /mov %UNPACK_DIR%\COPYING.LESSER .\
 robocopy /mov %UNPACK_DIR%\LICENSE .\
 robocopy /mov %UNPACK_DIR%\README.md .\
 
-# Make the site-packages directory
+:: Make the site-packages directory
 mkdir -p %SP_DIR%\%PKG_NAME%
 
-# Copy all of the appropriate things there
+:: Copy all of the appropriate things there
 robocopy /E %UNPACK_DIR%\* %SP_DIR%\%PKG_NAME%
 robocopy AUTHORS %SP_DIR%\%PKG_NAME%
 robocopy COPYING %SP_DIR%\%PKG_NAME%
@@ -20,21 +20,20 @@ robocopy COPYING.LESSER %SP_DIR%\%PKG_NAME%
 robocopy LICENSE %SP_DIR%\%PKG_NAME%
 robocopy README.md %SP_DIR%\%PKG_NAME%
 
-# Delete files that won't work for windows installations (C-based nodes)
+:: Delete files that won't work for windows installations (C-based nodes)
 del /s %SP_DIR%\%PKG_NAME%\Gridding
 del /s %SP_DIR%\%PKG_NAME%\Spiral
 del /q %SP_DIR%\%PKG_NAME%\Math\fft_PyMOD.cpp
 del /q %SP_DIR%\%PKG_NAME%\Math\GPI\FFTW_GPI.py
 del /q %SP_DIR%\%PKG_NAME%\Math\GPI\Interpolate_GPI.py
 
-# Do the build in place in site-packages
+:: No gpi_make on windows at this time - leaving as comments for reference
+:: Do the build in place in site-packages
 :: cd $SP_DIR/$PKG_NAME
-:: No gpi_make on windows at this time.
 ::gpi_make --all --ignore-system-libs --ignore-gpirc -r 3
 
 # drop a version file with parseable info
 set VERSION_FPATH=%SP_DIR%/%PKG_NAME%/VERSION
-::@echo off
 @echo PKG_NAME: %PKG_NAME% > %VERSION_FPATH%
 @echo PKG_VERSION: %PKG_VERSION% >> %VERSION_FPATH%
 @echo PKG_BUILD_STRING: %PKG_BUILD_STRING% >> %VERSION_FPATH%

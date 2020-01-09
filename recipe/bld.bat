@@ -6,18 +6,18 @@ set UNPACK_DIR=repo_contents
 robocopy /mov %UNPACK_DIR% .\ AUTHORS COPYING COPYING.LESSER LICENSE README.md
 
 :: Make the site-packages directory
-mkdir -p %SP_DIR%\%PKG_NAME%
+:: mkdir -p %SP_DIR%\%PKG_NAME%
 
 :: Copy all of the appropriate things there
-robocopy /E %UNPACK_DIR%\* %SP_DIR%\%PKG_NAME%
+robocopy %UNPACK_DIR% %SP_DIR%\%PKG_NAME% /MIR /XF .* /XD Gridding Spiral /XF *.cpp FFTW_GPI.py Interpolate_GPI.py
 robocopy .\ %SP_DIR%\%PKG_NAME% AUTHORS COPYING COPYING.LESSER LICENSE README.md
 
 :: Delete files that won't work for windows installations (C-based nodes)
-del /s %SP_DIR%\%PKG_NAME%\Gridding
-del /s %SP_DIR%\%PKG_NAME%\Spiral
-del /q %SP_DIR%\%PKG_NAME%\Math\fft_PyMOD.cpp
-del /q %SP_DIR%\%PKG_NAME%\Math\GPI\FFTW_GPI.py
-del /q %SP_DIR%\%PKG_NAME%\Math\GPI\Interpolate_GPI.py
+:: del /s %SP_DIR%\%PKG_NAME%\Gridding
+:: del /s %SP_DIR%\%PKG_NAME%\Spiral
+:: del /q %SP_DIR%\%PKG_NAME%\Math\fft_PyMOD.cpp
+:: del /q %SP_DIR%\%PKG_NAME%\Math\GPI\FFTW_GPI.py
+:: del /q %SP_DIR%\%PKG_NAME%\Math\GPI\Interpolate_GPI.py
 
 :: No gpi_make on windows at this time - leaving as comments for reference
 :: Do the build in place in site-packages

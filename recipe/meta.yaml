@@ -10,7 +10,7 @@ source:
   folder: repo_contents
 
 build:
-  number: 3
+  number: 4
   detect_binary_files_with_prefix: True
   skip: true  # [py2k]
 

@@ -10,17 +10,17 @@ source:
   folder: repo_contents
 
 build:
-  number: 2
+  number: 3
   detect_binary_files_with_prefix: True
-  skip: true  # [win or py2k]
+  skip: true  # [py2k]
 
 requirements:
   build:
-    - {{ compiler('c') }}  
-    - {{ compiler('cxx') }}
+    - {{ compiler('c') }}  # [unix]
+    - {{ compiler('cxx') }}  # [unix]
   host:
     - cytoolz
-    - gpi >=1.1.6
+    - gpi >=1.2.0
     - numpy =1.14  # [py==38]
     - numpy =1.11  # [py<38]
     - python
@@ -32,6 +32,10 @@ requirements:
     - scipy
 
 test:
+  requires:
+    - xorg-libsm  # [linux]
+    - xorg-libxcb  # [linux]
+    - xorg-libxrender  # [linux]
   imports:
     - gpi
     - gpi_core

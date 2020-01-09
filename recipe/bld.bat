@@ -3,22 +3,14 @@
 set UNPACK_DIR=repo_contents
 
 :: Move files to root dir to avoid a License file error 
-robocopy /mov %UNPACK_DIR%\AUTHORS .\
-robocopy /mov %UNPACK_DIR%\COPYING .\
-robocopy /mov %UNPACK_DIR%\COPYING.LESSER .\
-robocopy /mov %UNPACK_DIR%\LICENSE .\
-robocopy /mov %UNPACK_DIR%\README.md .\
+robocopy /mov %UNPACK_DIR% .\ AUTHORS COPYING COPYING.LESSER LICENSE README.md
 
 :: Make the site-packages directory
 mkdir -p %SP_DIR%\%PKG_NAME%
 
 :: Copy all of the appropriate things there
 robocopy /E %UNPACK_DIR%\* %SP_DIR%\%PKG_NAME%
-robocopy AUTHORS %SP_DIR%\%PKG_NAME%
-robocopy COPYING %SP_DIR%\%PKG_NAME%
-robocopy COPYING.LESSER %SP_DIR%\%PKG_NAME%
-robocopy LICENSE %SP_DIR%\%PKG_NAME%
-robocopy README.md %SP_DIR%\%PKG_NAME%
+robocopy .\ %SP_DIR%\%PKG_NAME% AUTHORS COPYING COPYING.LESSER LICENSE README.md
 
 :: Delete files that won't work for windows installations (C-based nodes)
 del /s %SP_DIR%\%PKG_NAME%\Gridding

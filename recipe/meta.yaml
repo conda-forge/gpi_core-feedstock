@@ -39,8 +39,11 @@ test:
   imports:
     - gpi
     - gpi_core
-  source_files:
-    - repo_contents/testNets/*
+  files:
+    - TestNetwork_Windows.net
+    - TestNetwork.net
+  commands:
+    - gpi --nogui TestNetwork_Windows.net  # [win]
 
 about:
   home: http://gpilab.com

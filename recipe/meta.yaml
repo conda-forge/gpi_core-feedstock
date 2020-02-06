@@ -1,4 +1,4 @@
-{% set version = "2.0.2" %}
+{% set version = "2.0.3" %}
 
 package:
   name: gpi_core
@@ -6,11 +6,11 @@ package:
 
 source:
   url: https://github.com/gpilab/core-nodes/archive/v{{ version }}.tar.gz
-  sha256: afb472f0b032a5e503c07fcb0b276a9c664885ad428185de70619cc607dbd735
+  sha256: 6c54f90a7f72105514bf199feda6b6a9c517109f1246e18debd3d62e618c1226
   folder: repo_contents
 
 build:
-  number: 4
+  number: 0
   detect_binary_files_with_prefix: True
   skip: true  # [py2k]
 

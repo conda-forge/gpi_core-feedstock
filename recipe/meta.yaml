@@ -10,7 +10,7 @@ source:
   folder: repo_contents
 
 build:
-  number: 0
+  number: 1
   detect_binary_files_with_prefix: True
   skip: true  # [py2k]
 
@@ -26,7 +26,7 @@ requirements:
     - python
   run:
     - {{ pin_compatible('gpi') }}
-    - matplotlib >=2.1
+    - matplotlib-base >=2.1
     - {{ pin_compatible('numpy') }}
     - python
     - scipy

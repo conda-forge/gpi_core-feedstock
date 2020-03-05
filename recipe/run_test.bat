@@ -1,3 +1,5 @@
-@echo off
+set TESTFILE=%HOMEPATH%\testNetOutput.txt
+gpi --nogui TestNetwork.net > %TESTFILE%
 
-gpi --nogui TestNetwork.net
+findstr gpi.canvasGraph:383 %TESTFILE%
+EXIT /B %ERRORLEVEL%

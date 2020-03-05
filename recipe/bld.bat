@@ -22,9 +22,11 @@ robocopy .\ %SP_DIR%\%PKG_NAME% AUTHORS COPYING COPYING.LESSER LICENSE README.md
 :: No gpi_make on windows at this time - leaving as comments for reference
 :: Do the build in place in site-packages
 cd %SP_DIR%\%PKG_NAME%
-gpi_make --all --ignore-system-libs --ignore-gpirc -r 3
+:: Specify exact paths for now, but restore to line below when GPI gets a gpi_make.cmd entry script
+%PYTHON% %PREFIX%\Scripts\gpi_make --all --ignore-system-libs --ignore-gpirc -r 3
+:: gpi_make --all --ignore-system-libs --ignore-gpirc -r 3
 
-# drop a version file with parseable info
+:: drop a version file with parseable info
 set VERSION_FPATH=%SP_DIR%/%PKG_NAME%/VERSION
 @echo PKG_NAME: %PKG_NAME% > %VERSION_FPATH%
 @echo PKG_VERSION: %PKG_VERSION% >> %VERSION_FPATH%

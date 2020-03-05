@@ -16,8 +16,9 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}  # [unix]
-    - {{ compiler('cxx') }}  # [unix]
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - pthreads-win32  # [win]
   host:
     - cytoolz
     - gpi >=1.2.0

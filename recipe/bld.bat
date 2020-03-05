@@ -9,7 +9,7 @@ robocopy /mov %UNPACK_DIR% .\ AUTHORS COPYING COPYING.LESSER LICENSE README.md
 :: mkdir -p %SP_DIR%\%PKG_NAME%
 
 :: Copy all of the appropriate things there
-robocopy %UNPACK_DIR% %SP_DIR%\%PKG_NAME% /MIR /XF .* /XD Gridding Spiral /XF *.cpp FFTW_GPI.py Interpolate_GPI.py
+robocopy %UNPACK_DIR% %SP_DIR%\%PKG_NAME% /MIR /XF .*
 robocopy .\ %SP_DIR%\%PKG_NAME% AUTHORS COPYING COPYING.LESSER LICENSE README.md
 
 :: Delete files that won't work for windows installations (C-based nodes)
@@ -21,8 +21,8 @@ robocopy .\ %SP_DIR%\%PKG_NAME% AUTHORS COPYING COPYING.LESSER LICENSE README.md
 
 :: No gpi_make on windows at this time - leaving as comments for reference
 :: Do the build in place in site-packages
-:: cd $SP_DIR/$PKG_NAME
-::gpi_make --all --ignore-system-libs --ignore-gpirc -r 3
+cd %SP_DIR%\%PKG_NAME%
+gpi_make --all --ignore-system-libs --ignore-gpirc -r 3
 
 # drop a version file with parseable info
 set VERSION_FPATH=%SP_DIR%/%PKG_NAME%/VERSION

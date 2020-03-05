@@ -18,12 +18,12 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - pthreads-win32  # [win]
   host:
     - cytoolz
     - gpi >=1.2.0
     - numpy =1.14  # [py==38]
     - numpy =1.11  # [py<38]
+    - pthreads-win32  # [win]
     - python
   run:
     - {{ pin_compatible('gpi') }}

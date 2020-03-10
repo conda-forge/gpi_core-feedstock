@@ -1,28 +1,15 @@
 @echo off
-
 set UNPACK_DIR=repo_contents
 
 :: Move files to root dir to avoid a License file error 
 robocopy /mov %UNPACK_DIR% .\ AUTHORS COPYING COPYING.LESSER LICENSE README.md
 
-:: Make the site-packages directory
-:: mkdir -p %SP_DIR%\%PKG_NAME%
-
-:: Copy all of the appropriate things there
+:: Copy all of the appropriate things to site-packages\gpi_core
 robocopy %UNPACK_DIR% %SP_DIR%\%PKG_NAME% /MIR /XF .*
 robocopy .\ %SP_DIR%\%PKG_NAME% AUTHORS COPYING COPYING.LESSER LICENSE README.md
 
-:: Delete files that won't work for windows installations (C-based nodes)
-:: del /s %SP_DIR%\%PKG_NAME%\Gridding
-:: del /s %SP_DIR%\%PKG_NAME%\Spiral
-:: del /q %SP_DIR%\%PKG_NAME%\Math\fft_PyMOD.cpp
-:: del /q %SP_DIR%\%PKG_NAME%\Math\GPI\FFTW_GPI.py
-:: del /q %SP_DIR%\%PKG_NAME%\Math\GPI\Interpolate_GPI.py
-
-:: No gpi_make on windows at this time - leaving as comments for reference
 :: Do the build in place in site-packages
 cd %SP_DIR%\%PKG_NAME%
-:: Specify exact paths for now, but restore to line below when GPI gets a gpi_make.cmd entry script
 gpi_make --all --ignore-system-libs --ignore-gpirc -r 3
 
 :: drop a version file with parseable info

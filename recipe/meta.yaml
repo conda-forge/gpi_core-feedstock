@@ -10,7 +10,7 @@ source:
   folder: repo_contents
 
 build:
-  number: 0
+  number: 1
   detect_binary_files_with_prefix: True
   skip: true  # [py2k]
 
@@ -20,7 +20,8 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - cytoolz
-    - gpi >=1.2.0
+    - gpi >=1.2.0  # [not win]
+    - gpi >=1.2.6  # [win]
     - numpy =1.14  # [py==38]
     - numpy =1.11  # [py<38]
     - pthreads-win32  # [win]

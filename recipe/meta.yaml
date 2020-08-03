@@ -1,4 +1,4 @@
-{% set version = "2.1.0" %}
+{% set version = "2.2.0" %}
 
 package:
   name: gpi_core
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://github.com/gpilab/core-nodes/archive/v{{ version }}.tar.gz
-  sha256: 033e9c7ce75f5de1153b61abaff5caa05751e30334ed642d149c70d7beefdf50
+  sha256: db568aca4d66a337f6f9f561aec097631d6d04661d1f6eb9babfa667daaaa81e
   folder: repo_contents
 
 build:
-  number: 1
-  detect_binary_files_with_prefix: True
+  number: 0
+  detect_binary_files_with_prefix: true
   skip: true  # [py2k]
 
 requirements:
@@ -50,7 +50,7 @@ about:
   license: GPL-3.0
   license_family: GPL
   license_file: LICENSE
-  summary: "Core nodes for the GPI development framework"
+  summary: Core nodes for the GPI development framework
   description: |
     These nodes provide basic functionality for GPI, such as mathematical
     operations, data shape modifiers, and data generators. Some basic

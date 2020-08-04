@@ -26,6 +26,7 @@ requirements:
     - numpy =1.11  # [py<38]
     - pthreads-win32  # [win]
     - python
+    - pydicom
   run:
     - {{ pin_compatible('gpi') }}
     - matplotlib-base >=2.1

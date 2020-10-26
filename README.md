@@ -5,9 +5,11 @@ Home: http://gpilab.com
 
 Package license: GPL-3.0
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/gpi_core-feedstock/blob/master/LICENSE.txt)
 
 Summary: Core nodes for the GPI development framework
+
+Development: https://github.com/gpilab/core-nodes
 
 These nodes provide basic functionality for GPI, such as mathematical
 operations, data shape modifiers, and data generators. Some basic

@@ -10,7 +10,7 @@ source:
   folder: repo_contents
 
 build:
-  number: 0
+  number: 1
   detect_binary_files_with_prefix: true
   skip: true  # [py2k]
 
@@ -26,12 +26,13 @@ requirements:
     - numpy =1.11  # [py<38]
     - pthreads-win32  # [win]
     - python
-    - pydicom
   run:
     - {{ pin_compatible('gpi') }}
-    - matplotlib-base >=2.1,<3.3
+    - matplotlib-base >=2.1,<3.3  # [not osx or py>=38]
+    - matplotlib-base >=2.1,<3.1.1  # [osx and py<=37]
     - {{ pin_compatible('numpy') }}
     - {{ pin_compatible('pthreads-win32') }}  # [win]
+    - pydicom
     - python
     - scipy
 

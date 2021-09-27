@@ -3,7 +3,7 @@ About gpi_core
 
 Home: http://gpilab.com
 
-Package license: GPL-3.0
+Package license: GPL-3.0-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/gpi_core-feedstock/blob/master/LICENSE.txt)
 
@@ -59,13 +59,6 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7278&branchName=master">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gpi_core-feedstock?branchName=master&jobName=linux&configuration=linux_64_python3.9.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_python3.6.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7278&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gpi_core-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.6.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -218,6 +211,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@aboudfayad](https://github.com/aboudfayad/)
 * [@aganders3](https://github.com/aganders3/)
 * [@borupdaniel](https://github.com/borupdaniel/)
 
